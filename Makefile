@@ -30,7 +30,7 @@ mingw :
 		nyacus.exe
 
 digitalmars :
-	make CC=sc NAME=NYADOS CFLAGS="-P -ml -o $(CCC)" O=obj nyados.exe
+	make CC=dmc NAME=NYADOS CFLAGS="-P -ml -o $(CCC)" O=obj nyados.exe
 	# -P ... Pascal linkcage
 
 emxos2 :
@@ -110,7 +110,7 @@ _package :
 	zip nyaos2-$(VER).zip nyaos2.exe nyaos2.txt _nya
 	zip nyacus-$(VER).zip nyacus.exe nyacus.txt _nya tagjump.vbs
 	zip nyados-$(VER).zip nyados.exe nyados.txt _nya greencat.ico 
-	zip nya-$(VER).zip  Makefile *.h *.cpp *.ico *.m4 _nya
+	hg archive -t zip nya-$(VER).zip
 
 documents : nyados.txt nyaos2.txt nyacus.txt
 
@@ -120,10 +120,13 @@ nyaos2.txt : nya.m4
 	m4 -DSHELL=NYAOS2 $< > $@
 nyacus.txt : nya.m4
 	m4 -DSHELL=NYACUS $< > $@
-clean : 
-	del *.obj *.o *.exe || rm *.obj *.o *.exe
 
+clean :
+	-cmd /c del *.obj
+	-cmd /c del *.o
+	-cmd /c del *.exe
 cleanobj :
-	del *.obj *.o || rm *.obj *.o
+	-cmd /c del *.obj
+	-cmd /c del *.o
 
 # vim:set noet ts=8 sw=8 nobk:

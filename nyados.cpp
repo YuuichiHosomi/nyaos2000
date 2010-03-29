@@ -235,7 +235,7 @@ int main( int argc, char **argv )
 #else
 	"Nihongo Yet Another OS/2 Shell "
 #endif
-	VER" (C) 2001-2009 by NYAOS.ORG\n";
+	VER" (C) 2001-2010 by NYAOS.ORG\n";
 
     NnDir::set_default_special_folder();
 
