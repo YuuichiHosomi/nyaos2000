@@ -9,6 +9,7 @@ public:
     static unsigned int getShiftKey();
     enum { SHIFT = 0x8000 };
 #ifdef NYACUS
+    static void restore_default_console_mode();
     static void getLocate(int &x,int &y);
     static void color(int c);
     static int color();
