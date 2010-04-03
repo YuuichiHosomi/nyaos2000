@@ -100,18 +100,6 @@ getch_msvc.$(O) : getch_msvc.cpp
 nyacusrc.$(O)  : nyacus.rc redcat.ico
 	windres --output-format=coff -o $@ $<
 
-release :
-	$(MAKE) _package VER=`gawk '/^#define VER/{ print $$3 }' nyados.cpp`
-
-nightly :
-	$(MAKE) _package VER=`date "+%Y%m%d"`
-
-_package :
-	zip nyaos2-$(VER).zip nyaos2.exe nyaos2.txt _nya
-	zip nyacus-$(VER).zip nyacus.exe nyacus.txt _nya tagjump.vbs
-	zip nyados-$(VER).zip nyados.exe nyados.txt _nya greencat.ico 
-	hg archive -t zip nya-$(VER).zip
-
 documents : nyados.txt nyaos2.txt nyacus.txt
 
 nyados.txt : nya.m4

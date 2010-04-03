@@ -5,9 +5,9 @@ if not '%1' == '' goto main
 :main
 if not '%OS%' == 'Windows_NT' goto OS2
     zip nyacus-%1.zip nyacus.exe _nya nyacus.txt
-    zip nyados-%1.zip nyados.exe _nya nyados.txt
+    zip nyados-%1.zip nyados.exe _nya nyados.txt greencat.ico
     hg archive -t zip nya-%1.zip
     goto exit
 :OS2
-    zip nyaos2-%1.zip nyaos2.exe _nya nyaos2.txt
+    zip nyaos2-%1.zip nyaos2.exe _nya nyaos2.txt nyaos2.ico
 :exit

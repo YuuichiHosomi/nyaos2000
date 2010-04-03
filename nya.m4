@@ -19,7 +19,7 @@ define(FULLNAME,[[Nihongo Yet Another OS/2 Shell II]])dnl
 define(SHELL.EXE,SHELL[[.EXE]])dnl
      The Free Software 
    FULLNAME
-  Copyright (C) 2001-2009 HAYAMA,Kaoru
+  Copyright (C) 2001-2010 HAYAMA,Kaoru
 
 目次
     - FULLNAME(NAME)とは....
@@ -1182,6 +1182,11 @@ dir/w がエラーになります
 変更履歴
 ========
 
+2.31_2 (2010/04/03)
+    ・ドキュメントの (c) が -2009 になっていたのを -2010 へ修正
+    ・ドキュメントの問合せ先を nifty へ変更
+    ・抜けていたDOS版/OS2版のパッケージにアイコンを追加
+
 2.31_1 (2010/03/30)
   (Windows)
     [蟲繕]
@@ -1836,7 +1841,7 @@ FULLNAME (SHELL) はフリーソフトウェアです。
     http://nyaos.org
 
 質問・バグリポート・提案がございましたら、以下までご連絡ください。
-    iyahaya@nyaos.org
+    iyahaya@nifty.com
 
 本ソフトウェア開発にあたり、次の方々にご協力いただきました。
 
