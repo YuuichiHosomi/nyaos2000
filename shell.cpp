@@ -140,15 +140,19 @@ int VariableFilter::lookup( NnString &name , NnString &value )
 void VariableFilter::cnv_digit( NnString::Iter &p , NnString &result )
 {
     const NnString *value;
+    NnString orgstr("%");
     int n=0;
 
     do{
+        orgstr << *p;
 	n = n*10 + (*p-'0');
 	++p;
     }while( p.digit() );
 
-    if( n < shell.argc()  &&  (value=shell.argv(n)) != NULL )
+    if( (value=shell.argv(n)) != NULL )
 	result << *value;
+    else
+        result << orgstr;
 }
 
 /* %* $* ‚È‚Ç‚Ì“WŠJ—p */
@@ -177,6 +181,9 @@ void VariableFilter::filter( NnString::Iter &p , NnString &result )
 		cnv_digit( p , result );
 	    }else if( *p == '*' ){
 		cnv_asterisk( p , result );
+            }else if( *p == '%' ){
+                result << '%';
+                ++p;
 	    }else{
 		for(; *p != 0 && *p != '%' ; ++p )
 		    name << *p;
