@@ -9,7 +9,11 @@
 #include "nnstring.h"
 #include "nnhash.h"
 
+#ifdef NYADOS
+typedef unsigned long filesize_t;
+#else
 typedef unsigned long long filesize_t;
+#endif
 
 #ifdef NYADOS
     union  REGS;
